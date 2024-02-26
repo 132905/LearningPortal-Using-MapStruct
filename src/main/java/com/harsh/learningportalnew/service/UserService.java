@@ -45,4 +45,6 @@ public interface UserService {
 
 	UserEntity findByusername(String username);
 
+	List<Object[]> getUsersWithRegisteredCourses();
+
 }
