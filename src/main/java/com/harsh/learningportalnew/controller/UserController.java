@@ -145,4 +145,11 @@ public class UserController {
 		return userService.seeFavouriteCourses(userId);
 	}
 
+	@GetMapping("/RegisteredCourses")
+	public List<Object[]> seeUsersWithRegisteredCourses() {
+
+		log.info("listing all the users with registered courses");
+		return userService.getUsersWithRegisteredCourses();
+	}
+
 }
