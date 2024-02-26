@@ -173,4 +173,8 @@ public class UserServiceImpl implements UserService {
 		//		return Optional.empty();
 	}
 
+	public List<Object[]> getUsersWithRegisteredCourses() {
+		return userRepository.getUsersWithRegisteredCoursesQuery();
+	}
+
 }
