@@ -39,5 +39,16 @@ class LearningPortalNewApplicationTests {
 		assertEquals(1, userService.getAllUsers().size());
 	}
 
+	@Test
+	void testRegister() {
+		UserDTO userDTO = new UserDTO("!@#", "manya", Role.ADMIN);
+		when(userRepository.save(any(UserEntity.class))).thenAnswer(invocation -> {
+			UserEntity savedEntity = invocation.getArgument(0);
+
+			return savedEntity;
+		});
+
+		assertEquals(userDTO, userService.registerUser(userDTO));
+
 	
 	}
